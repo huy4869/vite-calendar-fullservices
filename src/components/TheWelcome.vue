@@ -8,7 +8,11 @@ import SupportIcon from "./icons/IconSupport.vue";
 </script>
 
 <template>
-  <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+  <div
+    data-aos="flip-left"
+    data-aos-easing="ease-out-cubic"
+    data-aos-duration="2000"
+  >
     <WelcomeItem>
       <template #icon>
         <DocumentationIcon />
@@ -89,9 +93,7 @@ import SupportIcon from "./icons/IconSupport.vue";
     </WelcomeItem>
   </div>
 
-  <div data-aos="flip-left"
-       data-aos-easing="ease-out-cubic"
-       data-aos-duration="2000">
+  <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
     <WelcomeItem>
       <template #icon>
         <CommunityIcon />
@@ -118,10 +120,12 @@ import SupportIcon from "./icons/IconSupport.vue";
       twitter account for latest news in the Vue world.
     </WelcomeItem>
   </div>
-  <div data-aos="fade-left"
-       data-aos-anchor="#example-anchor"
-       data-aos-offset="500"
-       data-aos-duration="500">
+  <div
+    data-aos="fade-left"
+    data-aos-anchor="#example-anchor"
+    data-aos-offset="500"
+    data-aos-duration="500"
+  >
     <WelcomeItem>
       <template #icon>
         <SupportIcon />
