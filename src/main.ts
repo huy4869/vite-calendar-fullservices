@@ -3,6 +3,8 @@ import App from "./App.vue";
 import router from "./router";
 
 import "./assets/main.css";
+import './assets/index.scss'
+
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
