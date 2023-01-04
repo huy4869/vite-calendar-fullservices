@@ -14,6 +14,7 @@ import type { Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles"; // loads tsparticles
 
 export default {
+  name: 'PariclesJs',
   data() {
     return {
       // using an empty options object will load the default options, which are static particles with no background and 3px radius, opacity 100%, white color
@@ -48,7 +49,7 @@ export default {
         },
         particles: {
           links: {
-            distance: 100, // maximum distance for linking the particles
+            distance: 50, // maximum distance for linking the particles
             enable: true, // enabling this will make the particles linked together
           },
           move: {

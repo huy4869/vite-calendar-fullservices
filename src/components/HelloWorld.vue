@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import CyanButton from "@/components/button/CyanButton.vue";
+
 defineProps<{
   msg: string;
 }>();
@@ -6,21 +8,26 @@ defineProps<{
 
 <template>
   <div class="greetings">
-    <button class="bg-cyan-500 shadow-lg shadow-blue-500/50 rounded-lg px-8 my-8 p-2 shadow-blue-500/50 bg-violet-500 hover:bg-cyan-500 active:bg-cyan-700 focus:outline-none focus:ring focus:ring-violet-300 ...">
-      Save changes
-    </button>
-    <br>
+    <div class="text-center lg:text-left">
+      <CyanButton>
+        <template #title> Save change </template>
+      </CyanButton>
+    </div>
 
-    <h1 class="green text-3xl">{{ msg }} helo</h1>
+    <br />
+
+    <h1 class="green text-3xl main-title h-14 bg-gradient-to-r from-cyan-500 to-blue-500">{{ msg }} helo</h1>
     <h3>
       You’ve successfully created a project with
       <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
       <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
       What's next?
     </h3>
-    <div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
+    <div
+      class="my-5 p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4"
+    >
       <div class="flex-shrink-0">
-        <img class="h-12 w-12" src="/favicon.ico" alt="ChitChat Logo">
+        <img class="h-12 w-12" src="../assets/logo.svg" alt="ChitChat Logo" />
       </div>
       <div>
         <div class="text-xl font-medium text-black">ChitChat</div>

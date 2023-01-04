@@ -1,6 +1,6 @@
 <template>
   <div class="item">
-    <i>
+    <i class="cursor-pointer">
       <slot name="icon"></slot>
     </i>
     <div class="details">
