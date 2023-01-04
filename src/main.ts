@@ -13,6 +13,10 @@ import 'aos/dist/aos.css'
 // particles-js
 import Particles from "vue3-particles"
 
+// element plus
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+
 const app = createApp(App);
 
 app.use(router);
@@ -20,5 +24,7 @@ app.use(router);
 app.use(AOS.init())
 
 app.use(Particles)
+
+app.use(ElementPlus)
 
 app.mount("#app");

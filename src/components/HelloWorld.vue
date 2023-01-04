@@ -6,20 +6,11 @@ defineProps<{
 
 <template>
   <div class="greetings">
-    <button class="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 ...">
+    <button class="bg-cyan-500 shadow-lg shadow-blue-500/50 rounded-lg px-8 my-8 p-2 shadow-blue-500/50 bg-violet-500 hover:bg-cyan-500 active:bg-cyan-700 focus:outline-none focus:ring focus:ring-violet-300 ...">
       Save changes
     </button>
-    <el-button type="danger">
-      ga
-    </el-button>
-    <div class="container mx-auto bg-gray-200 rounded-xl shadow border p-8 m-10">
-      <p class="text-3xl text-gray-700 font-bold mb-5">
-        Welcome!
-      </p>
-      <p class="text-gray-500 text-lg">
-        Vue and Tailwind CSS in action
-      </p>
-    </div>
+    <br>
+
     <h1 class="green text-3xl">{{ msg }} helo</h1>
     <h3>
       You’ve successfully created a project with

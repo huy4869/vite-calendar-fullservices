@@ -20,7 +20,7 @@ export default {
       // all options can be found here: https://particles.js.org/docs/interfaces/Options_Interfaces_IOptions.IOptions.html
       options: {
         background: {
-          color: "#000", // this sets a background color for the canvas
+          color: "#1F2937", // this sets a background color for the canvas
         },
         fullScreen: {
           enable: true, // enabling this will make the canvas fill the entire screen, it's enabled by default
@@ -39,10 +39,10 @@ export default {
           },
           modes: {
             push: {
-              quantity: 5, // number of particles to add on click
+              quantity: 3, // number of particles to add on click
             },
             repulse: {
-              distance: 500, // distance of the particles from the cursor
+              distance: 700, // distance of the particles from the cursor
             },
           },
         },
@@ -53,7 +53,7 @@ export default {
           },
           move: {
             enable: true, // enabling this will make particles move in the canvas
-            speed: { min: 1, max: 5 }, // using a range in speed value will make particles move in a random speed between min/max values, each particle has its own value, it won't change over time by default
+            speed: { min: 1, max: 2 }, // using a range in speed value will make particles move in a random speed between min/max values, each particle has its own value, it won't change over time by default
           },
           opacity: {
             value: { min: 0.3, max: 0.7 }, // using a different opacity, to have some semitransparent effects
