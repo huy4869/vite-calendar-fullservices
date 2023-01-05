@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import CyanButton from "@/components/button/CyanButton.vue";
+import CyanButton from '@/components/button/CyanButton.vue'
 
 defineProps<{
-  msg: string;
-}>();
+  msg: string
+}>()
 </script>
 
 <template>
@@ -16,7 +16,11 @@ defineProps<{
 
     <br />
 
-    <h1 class="green text-3xl main-title h-14 bg-gradient-to-r from-cyan-500 to-blue-500">{{ msg }} helo</h1>
+    <h1
+      class="green text-3xl main-title h-14 bg-gradient-to-r from-cyan-500 to-blue-500"
+    >
+      {{ msg }} helo
+    </h1>
     <h3>
       You’ve successfully created a project with
       <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +

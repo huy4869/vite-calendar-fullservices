@@ -2,16 +2,16 @@
   <!-- tsParticles Repository: https://github.com/matteobruni/tsparticles -->
   <!-- tsParticles Website: https://particles.js.org -->
   <Particles
-      id="tsparticles"
-      :options="options"
-      :particlesInit="particlesInit"
+    id="tsparticles"
+    :options="options"
+    :particlesInit="particlesInit"
   />
 </template>
 
 <script lang="ts">
-import type { Engine } from "tsparticles-engine";
+import type { Engine } from 'tsparticles-engine'
 // import { loadSlim } from "tsparticles-slim"; // loads tsparticles-slim
-import { loadFull } from "tsparticles"; // loads tsparticles
+import { loadFull } from 'tsparticles' // loads tsparticles
 
 export default {
   name: 'PariclesJs',
@@ -21,7 +21,7 @@ export default {
       // all options can be found here: https://particles.js.org/docs/interfaces/Options_Interfaces_IOptions.IOptions.html
       options: {
         background: {
-          color: "#1F2937", // this sets a background color for the canvas
+          color: '#1F2937' // this sets a background color for the canvas
         },
         fullScreen: {
           enable: true, // enabling this will make the canvas fill the entire screen, it's enabled by default
@@ -31,7 +31,7 @@ export default {
           events: {
             onClick: {
               enable: true, // enables the click event, it's disabled by default
-              mode: "push", // adds the particles on click
+              mode: 'push' // adds the particles on click
             },
             onHover: {
               // enable: true, // enables the mouse hover event, it's disabled by default
@@ -44,8 +44,8 @@ export default {
             },
             repulse: {
               distance: 700, // distance of the particles from the cursor
-            },
-          },
+            }
+          }
         },
         particles: {
           links: {
@@ -61,16 +61,16 @@ export default {
           },
           size: {
             value: { min: 1, max: 3 }, // let's randomize the particles size a bit
-          },
-        },
+          }
+        }
       },
-    };
+    }
   },
   methods: {
     async particlesInit(engine: Engine) {
       // await loadSlim(engine);
-      await loadFull(engine); // for this sample the slim version is enough, choose whatever you prefer, slim is smaller in size but doesn't have all the plugins and the mouse trail feature
-    },
-  },
-};
+      await loadFull(engine) // for this sample the slim version is enough, choose whatever you prefer, slim is smaller in size but doesn't have all the plugins and the mouse trail feature
+    }
+  }
+}
 </script>
