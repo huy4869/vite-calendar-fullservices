@@ -19,7 +19,7 @@ module.exports = {
   rules: {
     'vue/singleline-html-element-content-newline': 'off',
     'vue/multiline-html-element-content-newline': 'off',
-    'vue/name-property-casing': ['error', 'PascalCase'],
+    'vue/name-property-casing': 'off',
     'vue/no-v-html': 'off',
     'accessor-pairs': 2,
     'arrow-spacing': [2, {
@@ -189,7 +189,10 @@ module.exports = {
     'object-curly-spacing': [2, 'always', {
       objectsInObjects: false
     }],
-    'array-bracket-spacing': [2, 'never']
+    'array-bracket-spacing': [2, 'never'],
+    "prettier/prettier": ["off", {
+      "endOfLine":"auto"
+    }],
   }
 
 };

@@ -6,11 +6,14 @@ import router from './router'
 
 // scss
 import './assets/main.css'
-import './assets/index.scss'
+import './assets/scss/index.scss'
 
 // aos animation
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+
+// autoAnimate
+import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
 
 // particles-js
 import Particles from 'vue3-particles'
@@ -18,6 +21,9 @@ import Particles from 'vue3-particles'
 // element plus
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
+
+// plugins
+import ImportPlugin from './plugins/ImportPlugin'
 
 const app = createApp(App)
 
@@ -27,4 +33,6 @@ app.use(router)
 app.use(AOS.init())
 app.use(Particles)
 app.use(ElementPlus)
+app.use(ImportPlugin)
+app.use(autoAnimatePlugin)
 app.mount('#app')

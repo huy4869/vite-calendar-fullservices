@@ -5,9 +5,13 @@ import ToolingIcon from './icons/IconTooling.vue'
 import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
+import ScrollDown from '@/components/ScrollDown.vue'
 </script>
 
 <template>
+  <div class="text-center my-6">
+    <scroll-down></scroll-down>
+  </div>
   <div
     data-aos="flip-left"
     data-aos-easing="ease-out-cubic"
@@ -140,7 +144,18 @@ import SupportIcon from './icons/IconSupport.vue'
     </WelcomeItem>
   </div>
   <div
-    id="main"
+      id="main"
+      class="my-5 p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4"
+  >
+    <div class="flex-shrink-0">
+      <img class="h-12 w-12" src="../assets/logo.svg" alt="ChitChat Logo" />
+    </div>
+    <div>
+      <div class="text-xl font-medium text-black">ChitChat</div>
+      <p class="text-gray-500">You have a new message!</p>
+    </div>
+  </div>
+  <div
     data-aos="flip-left"
     data-aos-easing="ease-out-cubic"
     data-aos-duration="2000"
