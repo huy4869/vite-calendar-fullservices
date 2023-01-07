@@ -7,14 +7,16 @@ function removeItem(toRemove) {
 </script>
 
 <template>
-  <h5>Click emojis to remove them.</h5>
-  <ul v-auto-animate>
-    <li
-        v-for="item in items"
-        :key="item"
-        @click="removeItem(item)"
-    >
-      {{ item }}
-    </li>
-  </ul>
+  <div class="scroll-down">
+    <h5>Click emojis to remove them.</h5>
+    <ul v-auto-animate>
+      <li
+          v-for="item in items"
+          :key="item"
+          @click="removeItem(item)"
+      >
+        {{ item }}
+      </li>
+    </ul>
+  </div>
 </template>

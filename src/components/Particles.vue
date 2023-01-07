@@ -25,7 +25,7 @@ export default {
         },
         fullScreen: {
           enable: true, // enabling this will make the canvas fill the entire screen, it's enabled by default
-          zIndex: -1, // this is the z-index value used when the fullScreen is enabled, it's 0 by default
+          zIndex: -1 // this is the z-index value used when the fullScreen is enabled, it's 0 by default
         },
         interactivity: {
           events: {
@@ -36,34 +36,34 @@ export default {
             onHover: {
               // enable: true, // enables the mouse hover event, it's disabled by default
               // mode: "repulse", // repulse the particles on mouse hover
-            },
+            }
           },
           modes: {
             push: {
-              quantity: 3, // number of particles to add on click
+              quantity: 3 // number of particles to add on click
             },
             repulse: {
-              distance: 700, // distance of the particles from the cursor
+              distance: 700 // distance of the particles from the cursor
             }
           }
         },
         particles: {
           links: {
-            distance: 50, // maximum distance for linking the particles
-            enable: true, // enabling this will make the particles linked together
+            distance: 30, // maximum distance for linking the particles
+            enable: true // enabling this will make the particles linked together
           },
           move: {
             enable: true, // enabling this will make particles move in the canvas
-            speed: { min: 1, max: 2 }, // using a range in speed value will make particles move in a random speed between min/max values, each particle has its own value, it won't change over time by default
+            speed: { min: 1, max: 2 } // using a range in speed value will make particles move in a random speed between min/max values, each particle has its own value, it won't change over time by default
           },
           opacity: {
-            value: { min: 0.3, max: 0.7 }, // using a different opacity, to have some semitransparent effects
+            value: { min: 0.3, max: 0.7 } // using a different opacity, to have some semitransparent effects
           },
           size: {
-            value: { min: 1, max: 3 }, // let's randomize the particles size a bit
+            value: { min: 1, max: 3 } // let's randomize the particles size a bit
           }
         }
-      },
+      }
     }
   },
   methods: {

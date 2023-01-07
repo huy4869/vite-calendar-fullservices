@@ -13,7 +13,8 @@
   height: 10px;
   margin: 0 auto;
   position: relative;
-  color: $color-orange;
+  //color: $color-orange;
+  color: $color-cyan-500;
   text-decoration: none;
   font-size: 12px;
 }
@@ -25,8 +26,8 @@
   width: 30px;
   height: 30px;
   margin-left: -15px;
-  border-left: 4px solid $color-orange;
-  border-bottom: 4px solid $color-orange;
+  border-left: 4px solid $color-cyan-500;
+  border-bottom: 4px solid $color-cyan-500;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
   -webkit-animation: sdb 1.5s infinite;
