@@ -3,14 +3,51 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-// import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
     vueJsx(),
+    Components({
+      // `globalComponentsDeclaration` has renamed to `dts`
+      dirs: ['src/components'],
+      deep: true,
+      // generate `components.d.ts` global declarations,
+      // also accepts a path for custom filename
+      // default: `true` if package typescript is installed
+      dts: true,
+      // Allow subdirectories as namespace prefix for components.
+      directoryAsNamespace: false,
+      // Collapse same prefixes (camel-sensitive) of folders and components
+      // to prevent duplication inside namespaced component name.
+      // works when `directoryAsNamespace: true`
+      collapseSamePrefixes: false,
+      // Subdirectory paths for ignoring namespace prefixes.
+      // works when `directoryAsNamespace: true`
+      globalNamespaces: [],
+      // auto import for directives
+      // default: `true` for Vue 3, `false` for Vue 2
+      // Babel is needed to do the transformation for Vue 2, it's disabled by default for performance concerns.
+      // To install Babel, run: `npm install -D @babel/parser`
+      directives: true,
+      // Transform path before resolving
+      importPathTransform: v => v,
+      // Allow for components to override other components with the same name
+      allowOverrides: false,
+      types: [{
+        from: 'vue-router',
+        names: ['RouterLink', 'RouterView'],
+      }],
+      resolvers: [
+        ElementPlusResolver()
+      ],
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/, /[\\/]\.nuxt[\\/]/]
+    }),
     AutoImport({
       // targets to transform
       include: [
@@ -43,7 +80,6 @@ export default defineConfig({
       // Auto import for module exports under directories
       // by default it only scan one level of modules under the directory
       dirs: [
-        './components/**'
         // './hooks',
         // './composables' // only root modules
         // './composables/**', // all nested modules
