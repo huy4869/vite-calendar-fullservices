@@ -1,5 +1,6 @@
 <template>
   <div class="about">
+    <HelloWorld msg="Heloo!" />
     <h1>List icon page</h1>
     <ListIcon></ListIcon>
   </div>

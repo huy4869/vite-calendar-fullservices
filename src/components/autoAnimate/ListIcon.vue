@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from 'vue'
 const items = ref(['😏', '😐', '😑', '😒', '😕'])
 function removeItem(toRemove) {
   items.value = items.value.filter((item) => item !== toRemove)

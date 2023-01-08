@@ -1,17 +1,18 @@
 /* eslint-env node */
-require("@rushstack/eslint-patch/modern-module-resolution");
+require('@rushstack/eslint-patch/modern-module-resolution')
 
 module.exports = {
   root: true,
   extends: [
-    "plugin:vue/vue3-essential",
-    "eslint:recommended",
-    "@vue/eslint-config-typescript",
-    "@vue/eslint-config-prettier",
-    "prettier"
+    'plugin:vue/vue3-essential',
+    'eslint:recommended',
+    '@vue/eslint-config-typescript',
+    '@vue/eslint-config-prettier',
+    'prettier',
+    './.eslintrc-auto-import.json'
   ],
   parserOptions: {
-    ecmaVersion: "latest",
+    ecmaVersion: 'latest'
   },
   env: {
     node: true
@@ -190,9 +191,9 @@ module.exports = {
       objectsInObjects: false
     }],
     'array-bracket-spacing': [2, 'never'],
-    "prettier/prettier": ["off", {
-      "endOfLine":"auto"
-    }],
+    'prettier/prettier': ['off', {
+      'endOfLine': 'auto'
+    }]
   }
 
-};
+}
