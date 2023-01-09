@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
 import CustomParticles from './components/Particles.vue'
 </script>
 
@@ -7,6 +6,7 @@ import CustomParticles from './components/Particles.vue'
   <CustomParticles class="contents"></CustomParticles>
 
   <header>
+    <component :is="$route.meta.layout || 'div'">
     <!--    <img-->
     <!--      alt="Vue logo"-->
     <!--      class="logo"-->
@@ -14,15 +14,14 @@ import CustomParticles from './components/Particles.vue'
     <!--      width="125"-->
     <!--      height="125"-->
     <!--    />-->
-
-    <div class="wrapper">
-      <HelloWorld msg="Heloo!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
+      <div class="wrapper">
+        <HelloWorld msg="Heloo!" />
+        <nav>
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/about">About</RouterLink>
+        </nav>
+      </div>
+    </component>
   </header>
   <RouterView />
 </template>

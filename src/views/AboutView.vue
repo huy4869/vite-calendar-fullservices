@@ -1,8 +1,6 @@
 <template>
   <div class="about">
-    <HelloWorld msg="Heloo!" />
-    <h1>List icon page</h1>
-    <ListIcon></ListIcon>
+    <ListIcon class="mt-6"></ListIcon>
   </div>
 </template>
 
@@ -16,5 +14,4 @@
 }
 </style>
 <script setup lang="ts">
-import ListIcon from '@/components/autoAnimate/ListIcon.vue'
 </script>
