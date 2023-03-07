@@ -49,7 +49,7 @@ export default {
         },
         particles: {
           links: {
-            distance: 30, // maximum distance for linking the particles
+            distance: 10, // maximum distance for linking the particles
             enable: true // enabling this will make the particles linked together
           },
           move: {

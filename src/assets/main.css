@@ -11,8 +11,9 @@
 a,
 .green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  /*color: hsla(160, 100%, 37%, 1) !important;*/
   transition: 0.4s;
+  color: #67e8f9 !important;
 }
 
 .main-title {

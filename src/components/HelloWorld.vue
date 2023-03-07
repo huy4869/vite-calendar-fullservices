@@ -17,7 +17,7 @@ defineProps<{
     <br />
 
     <h1
-      class="green text-3xl main-title h-14 bg-gradient-to-r from-cyan-300 to-blue-500"
+      class="text-3xl main-title h-14 bg-gradient-to-r from-cyan-300 to-blue-500"
     >
       {{ msg }} Hain
     </h1>
