@@ -25,6 +25,9 @@ import 'element-plus/dist/index.css'
 // i18n
 import i18n from './lang'
 
+// register Component
+import { registerGlobalComponent } from '@/utils/import'
+
 // plugins
 import ImportPlugin from './plugins/ImportPlugin'
 
@@ -39,4 +42,5 @@ app.use(Particles)
 app.use(ElementPlus)
 app.use(ImportPlugin)
 app.use(autoAnimatePlugin)
+registerGlobalComponent(app)
 app.mount('#app')

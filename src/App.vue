@@ -16,10 +16,6 @@ import CustomParticles from './components/Particles.vue'
     <!--    />-->
       <div class="wrapper">
         <HelloWorld msg="Heloo!" />
-        <nav>
-          <RouterLink to="/">Home</RouterLink>
-          <RouterLink to="/about">About</RouterLink>
-        </nav>
       </div>
     </component>
   </header>

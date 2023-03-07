@@ -204,6 +204,9 @@ module.exports = {
     ],
     'array-bracket-spacing': [2, 'never'],
     'space-before-function-paren': 0,
+    'prettier/prettier': ['off', {
+      'endOfLine': 'auto'
+    }]
   },
 
 }
