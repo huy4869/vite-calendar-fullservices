@@ -1,4 +1,6 @@
 // tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     // Example content paths...
@@ -6,7 +8,13 @@ module.exports = {
     './src/**/*.{js,jsx,ts,tsx,vue}'
   ],
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        bg: {
+          '02' : 'var(--vt-c-white)'
+        }
+      },
+    }
   },
   variants: {
     extend: {}

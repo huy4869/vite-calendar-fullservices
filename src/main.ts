@@ -5,7 +5,7 @@ import App from './App.vue'
 import router from './router'
 
 // scss
-import './assets/main.css'
+import './assets/main.scss'
 import './assets/scss/index.scss'
 
 // aos animation

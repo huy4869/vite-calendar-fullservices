@@ -1,26 +1,31 @@
-<script setup lang="ts">
-import CustomParticles from './components/Particles.vue'
-</script>
-
 <template>
   <CustomParticles class="contents"></CustomParticles>
 
-  <header>
-    <component :is="$route.meta.layout || 'div'">
-    <!--    <img-->
-    <!--      alt="Vue logo"-->
-    <!--      class="logo"-->
-    <!--      src="@/assets/logo.svg"-->
-    <!--      width="125"-->
-    <!--      height="125"-->
-    <!--    />-->
-      <div class="wrapper">
-        <HelloWorld msg="Heloo!" />
-      </div>
+  <el-config-provider :locale="vi">
+    <component :is="layout">
+      <RouterView />
     </component>
-  </header>
-  <RouterView />
+  </el-config-provider>
 </template>
+
+<script setup lang="ts">
+import CustomParticles from './components/Particles.vue'
+import vi from 'element-plus/dist/locale/vi.mjs'
+import { computed, reactive } from 'vue'
+import { useRoute } from "vue-router"
+import { PUBLIC_LAYOUT } from '@/constants'
+
+const state = reactive({
+  logged: false,
+  count: 1,
+})
+
+const route = useRoute()
+const layout = computed(() => {
+  return (route.meta.layout || PUBLIC_LAYOUT)
+})
+
+</script>
 
 <style scoped>
 header {

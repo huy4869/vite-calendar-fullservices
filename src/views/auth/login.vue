@@ -1,6 +1,8 @@
 <template>
-  <div>
-    login
+  <div class="auth-page">
+    <FormAuth :title="$t('login.logIn')">
+
+    </FormAuth>
   </div>
 </template>
 
