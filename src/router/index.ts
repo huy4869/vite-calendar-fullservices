@@ -26,6 +26,14 @@ export const routes = [
     meta: {
       layout: none
     }
+  },
+  {
+    path: '/hain',
+    name: 'hain',
+    component: () => import('../views/Hain.vue'),
+    meta: {
+      layout: none
+    }
   }
 ]
 

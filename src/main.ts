@@ -22,6 +22,27 @@ import Particles from 'vue3-particles'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 
+// vuetify 3
+
+import 'vuetify/styles'
+import { aliases, mdi } from 'vuetify/iconsets/mdi'
+import { createVuetify } from 'vuetify'
+import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
+
+const vuetify = createVuetify({
+  components,
+  directives,
+  icons: {
+    defaultSet: 'mdi',
+    aliases,
+    sets: {
+      mdi,
+    },
+  },
+})
+
 // i18n
 import i18n from './lang'
 
@@ -40,6 +61,7 @@ app.use(router)
 app.use(AOS.init())
 app.use(Particles)
 app.use(ElementPlus)
+app.use(vuetify)
 app.use(ImportPlugin)
 app.use(autoAnimatePlugin)
 registerGlobalComponent(app)

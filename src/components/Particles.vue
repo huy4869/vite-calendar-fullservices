@@ -21,7 +21,8 @@ export default {
       // all options can be found here: https://particles.js.org/docs/interfaces/Options_Interfaces_IOptions.IOptions.html
       options: {
         background: {
-          color: '#0F172A' // this sets a background color for the canvas
+          color: '#ffffff'
+          // color: '#0F172A' // this sets a background color for the canvas
         },
         fullScreen: {
           enable: true, // enabling this will make the canvas fill the entire screen, it's enabled by default
@@ -50,7 +51,11 @@ export default {
         particles: {
           links: {
             distance: 10, // maximum distance for linking the particles
-            enable: true // enabling this will make the particles linked together
+            enable: true, // enabling this will make the particles linked together
+            color: '#42b983'
+          },
+          color: {
+            value: '#42b983'
           },
           move: {
             enable: true, // enabling this will make particles move in the canvas

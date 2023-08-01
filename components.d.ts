@@ -23,6 +23,7 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     ScrollDown: typeof import('./src/components/ScrollDown.vue')['default']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
+    Vuecal: typeof import('./src/components/Vuecal.vue')['default']
     WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
   }
 }

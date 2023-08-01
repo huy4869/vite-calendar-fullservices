@@ -4,9 +4,11 @@
 <template>
   <CustomParticles class="contents"></CustomParticles>
 
-  <header>
-    <div class="wrapper">
-      <HelloWorld msg="Heloo!" />
-    </div>
-  </header>
+  <slot/>
+
+<!--  <header>-->
+<!--    <div class="wrapper">-->
+<!--      <HelloWorld msg="Heloo!" />-->
+<!--    </div>-->
+<!--  </header>-->
 </template>
