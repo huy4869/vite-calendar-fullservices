@@ -7,32 +7,43 @@
         <div class="w-flex wrap align-center justify-center">
           <div class="ma4">
             <vue-cal
-                class="vuecal--date-picker demo"
-                xsmall="xsmall"
-                :selected-date="selectedDate"
-                hide-view-selector="hide-view-selector"
-                :time="false"
-                :transitions="false"
-                active-view="month"
-                :events="events"
-                :disable-views="['week', 'day']"
-                @cell-click="selectedDate = $event"
-                style="width: 210px;height: 230px">
+              class="vuecal--date-picker demo"
+              xsmall="xsmall"
+              :selected-date="selectedDate"
+              hide-view-selector="hide-view-selector"
+              :time="false"
+              :transitions="false"
+              active-view="month"
+              :events="events"
+              :disable-views="['week', 'day']"
+              @cell-click="selectedDate = $event"
+              style="width: 210px;height: 230px">
             </vue-cal>
             <div class="grey code my2" style="font-size: 13px">Selected date: '{{ formatDate(selectedDate) }}'</div>
           </div>
           <div class="grow mx2" style="max-width: 800px">
             <vue-cal
-                class="demo full-cal vuecal--full-height-delete"
-                :selected-date="selectedDate"
-                :events="events"
-                :time="false"
-                active-view="month"
-                @cell-focus="selectedDate = $event.date || $event"
-                :disable-views="['hour']"
-                style="height: 450px">
+              ref="vuecal"
+              class="demo full-cal vuecal--full-height-delete"
+              :selected-date="selectedDate"
+              :events="events"
+              active-view="month"
+              @cell-focus="selectedDate = $event.date || $event"
+              today-button
+              editable-events
+              :time-from="10 * 60"
+              :time-to="23 * 60"
+              :drag-to-create-event="false"
+              :on-event-create="checkIn"
+              style="height: 450px">
               <template #today-button>
-                asdf
+                <v-tooltip text="Go to Today's date">
+                  <template #activator="{ on }">
+                    <v-btn class="w-button primary w-button--text size--md" v-on="on">
+                      <v-icon>mdi-target</v-icon>
+                    </v-btn>
+                  </template>
+                </v-tooltip>
               </template>
             </vue-cal>
           </div>
@@ -46,17 +57,16 @@
 import VueCal from 'vue-cal'
 import 'vue-cal/dist/vuecal.css'
 import moment from "moment"
+import Cookies from 'js-cookie'
 
-const events = ref([
+const events = ref([])
+const eventsList = ref([
   {
-    start: '2023-07-28 14:00',
-    end: '2023-07-28 17:30',
+    start: '2023-08-08 14:00',
+    end: '2023-08-08 17:30',
     title: 'Đi nhàm',
-    content: '<i class="icon material-icons">block</i><br>I am not draggable, not resizable and not deletable.',
-    class: 'blue-event',
-    deletable: false,
-    resizable: false,
-    draggable: false
+    content: 'iu meo con nhat',
+    class: 'green-event'
   }
 ])
 
@@ -64,6 +74,31 @@ const selectedDate = ref(moment().format('YYYY-MM-DD'))
 
 const formatDate = (date: moment.MomentInput) => {
   return moment(date).format('YYYY-MM-DD')
+}
+
+const vuecal = ref(null)
+
+onMounted(() => {
+  const list = Cookies.get('events')
+  events.value = !list ? eventsList.value : JSON.parse(list)
+})
+
+const checkIn = (event) => {
+  event.class = 'green-event'
+  event.content = 'iu hainn 🎉🥰'
+  events.value.push(event)
+  const addEvent = {
+    start: moment(event.start).format('YYYY-MM-DD HH:mm'),
+    end: moment(event.end).format('YYYY-MM-DD HH:mm'),
+    title: event.title,
+    content: event.content,
+    class: 'green-event'
+  }
+  eventsList.value.push(addEvent)
+  Cookies.set('events', JSON.stringify(eventsList.value))
+
+  console.log(eventsList.value)
+  return event
 }
 
 </script>
@@ -83,6 +118,20 @@ const formatDate = (date: moment.MomentInput) => {
 .vuecal__cell-split--highlighted {background-color: rgba(195, 255, 225, 0.5);}
 .vuecal__arrow.vuecal__arrow--highlighted,
 .vuecal__view-btn.vuecal__view-btn--highlighted {background-color: rgba(136, 236, 191, 0.25);}
+
+.vuecal__event.green-event {
+  background-color: #c8f8e9cc;
+  border: none;
+  border-left: 3px solid rgba(99,186,139,.4);
+  color: #219671;
+  .vuecal__event-title--edit {
+    font-weight: 700;
+  }
+}
+
+.demo .vuecal__event-time {
+  display: none;
+}
 
 .w-button {
   width: 26px;
@@ -235,7 +284,24 @@ $kate: #ff7fc8;
   }
   // ------------------------------------------------------
 }
-
+.vuecal__header button {
+  background-color: transparent;
+}
+.w-button.size--md {
+  //height:24px
+}
+.ex--adding-a-today-button .w-button {
+  width: 26px;
+  height: 26px;
+  background-color:transparent !important
+}
+.w-app .primary {
+  color: #42b983;
+}
+.w-button--text {
+  background-color: transparent;
+  border-color: transparent;
+}
 // Media queries.
 // --------------------------------------------------------
 @media screen and (max-width: 499px) {
