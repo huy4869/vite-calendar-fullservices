@@ -7,7 +7,7 @@ import { authRoutes } from '@/router/auth'
 export const routes = [
     ...authRoutes,
   {
-    path: '/',
+    path: '/home',
     name: 'home',
     component: HomeView
   },
@@ -20,7 +20,7 @@ export const routes = [
     component: () => import('../views/AboutView.vue')
   },
   {
-    path: '/love-me',
+    path: '/',
     name: 'love-me',
     component: () => import('../views/LoveMe.vue'),
     meta: {
