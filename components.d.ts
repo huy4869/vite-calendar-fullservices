@@ -8,7 +8,6 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     CyanButton: typeof import('./src/components/button/CyanButton.vue')['default']
-    ElButton: typeof import('element-plus/es')['ElButton']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
     FormAuth: typeof import('./src/components/auth/form-auth.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
@@ -23,7 +22,6 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     ScrollDown: typeof import('./src/components/ScrollDown.vue')['default']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
-    Vuecal: typeof import('./src/components/Vuecal.vue')['default']
     WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
   }
 }

@@ -1,0 +1,20 @@
+# docker-compose.yml
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hain-app
+    ports:
+      - "8080:80"
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-app
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+    depends_on:
+      - app

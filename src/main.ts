@@ -62,7 +62,9 @@ app.use(AOS.init())
 app.use(Particles)
 app.use(ElementPlus)
 app.use(vuetify)
+// @ts-ignore
 app.use(ImportPlugin)
+// @ts-ignore
 app.use(autoAnimatePlugin)
 registerGlobalComponent(app)
 app.mount('#app')

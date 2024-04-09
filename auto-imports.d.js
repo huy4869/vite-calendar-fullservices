@@ -2,6 +2,8 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
+  const [alias]: typeof import('[package-name]')['[from]']
+  const [import-names]: typeof import('[package-name]')['[import-names]']
   const axios: typeof import('axios')['default']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
@@ -65,6 +67,8 @@ import { UnwrapRef } from 'vue'
 declare module 'vue' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly [alias]: UnwrapRef<typeof import('[package-name]')['[from]']>
+    readonly [import-names]: UnwrapRef<typeof import('[package-name]')['[import-names]']>
     readonly axios: UnwrapRef<typeof import('axios')['default']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>

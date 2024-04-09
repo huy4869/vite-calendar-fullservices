@@ -67,11 +67,11 @@ export default defineConfig({
             // default imports
             ['default', 'axios'] // import { default as axios } from 'axios',
           ],
-          '[package-name]': [
-            '[import-names]',
-            // alias
-            ['[from]', '[alias]']
-          ]
+          // '[package-name]': [
+          //   '[import-names]',
+          //   // alias
+          //   ['[from]', '[alias]']
+          // ]
         }
       ],
       // Enable auto import by filename for default module exports under directories
@@ -114,5 +114,8 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  build: {
+    chunkSizeWarningLimit: 2024
   }
 })

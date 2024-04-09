@@ -37,7 +37,8 @@
           style="height: 450px">
           <template #today-button>
             <v-tooltip text="Go to Today's date">
-              <template #activator="{ on }">
+				<!-- @vue-ignore -->
+				<template #activator="{ on }">
                 <v-btn class="w-button primary w-button--text size--md" v-on="on">
                   <v-icon>mdi-target</v-icon>
                 </v-btn>
@@ -56,7 +57,9 @@ import 'vue-cal/dist/vuecal.css'
 import moment from "moment"
 import Cookies from 'js-cookie'
 
-const events = ref([])
+// const events = ref(any[])
+const events = ref<any[]>([])
+
 const eventsList = ref([
   {
     start: '2023-08-08 14:00',
